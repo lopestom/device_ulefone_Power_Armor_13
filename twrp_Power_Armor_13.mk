@@ -19,7 +19,14 @@ PRODUCT_PLATFORM := mt6785
 # Inherit from common AOSP config
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
+
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
+# Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+
+# Inherit from rosemary device
+$(call inherit-product, device/ulefone/Power_Armor_13/device.mk)
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/twrp/config/common.mk)
