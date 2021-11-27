@@ -30,9 +30,10 @@
 /bootloader      emmc    /dev/block/platform/bootdevice/by-name/lk                 flags=backup=1;display="Bootloader (lk)";flashimg=1
 /bootloader2     emmc    /dev/block/platform/bootdevice/by-name/lk2                flags=backup=1;subpartitionof=/bootloader
 /logo		    emmc	/dev/block/platform/bootdevice/by-name/logo             flags=display="logo";backup=1;flashimg=1
+/misc            emmc    /dev/block/platform/bootdevice/by-name/misc
 /expdb		    emmc	/dev/block/platform/bootdevice/by-name/expdb             flags=display="expdb";backup=1
 /seccfg		    emmc	/dev/block/platform/bootdevice/by-name/seccfg           flags=display="SecCfg";backup=1
-/misc		    emmc	/dev/block/platform/bootdevice/by-name/para             flags=display="para_misc";backup=1;flashimg=1
+/para		    emmc	/dev/block/platform/bootdevice/by-name/para             flags=display="para";backup=1;flashimg=1
 /boot_para	    emmc	/dev/block/platform/bootdevice/by-name/boot_para        flags=display="boot_para";backup=1
 /proinfo	    emmc	/dev/block/platform/bootdevice/by-name/proinfo          flags=display="Proinfo";backup=1
 
@@ -59,8 +60,6 @@
 # Modem
 /md1img		    emmc	/dev/block/platform/bootdevice/by-name/md1img           flags=display="Modem";backup=1;flashimg=1
 /md1dsp         emmc    /dev/block/platform/bootdevice/by-name/md1dsp            flags=display="md1dsp";backup=1
-/md1arm7        emmc    /dev/block/platform/bootdevice/by-name/md1arm7
-/md3img         emmc    /dev/block/platform/bootdevice/by-name/md3img
 
 # System Control Processor (SCP)
 /scp1		    emmc	/dev/block/platform/bootdevice/by-name/scp1             flags=display="scp1";backup=1
@@ -80,8 +79,8 @@
 /spmfw		    emmc	/dev/block/platform/bootdevice/by-name/spmfw            flags=display="Spm";backup=1
 /sspm_1		    emmc	/dev/block/platform/bootdevice/by-name/sspm_1           flags=display="sspm_1";backup=1
 /sspm_2		    emmc	/dev/block/platform/bootdevice/by-name/sspm_2           flags=backup=1;subpartitionof=/sspm_1
-#/odmdtbo emmc /dev/block/platform/bootdevice/by-name/odmdtbo
 
 # External-Devices (SDCARD | OTG)
-/external_sd   auto    /dev/block/mmcblk0p1  /dev/block/mmcblk1p1   flags=display="MicroSD";fsflags=utf8;storage;wipeingui;removable
-/usb_otg       auto       /dev/block/sda1      /dev/block/sda     flags=display="Usb_Otg";fsflags=utf8;storage;wipeingui;removable
+/external_sd   auto    /dev/block/mmcblk0p1  /dev/block/mmcblk0   flags=display="MicroSD";fsflags=utf8;storage;wipeingui;removable
+/usb_otg       auto       /dev/block/sdd1      /dev/block/sdd     flags=display="Usb_Otg";fsflags=utf8;storage;wipeingui;removable
+
