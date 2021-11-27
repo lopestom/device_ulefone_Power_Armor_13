@@ -2,6 +2,7 @@ import /init.recovery.microtrust.rc
 
 on init
     export ANDROID_ROOT /system_root
+    export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/vendor/lib64/hw
     mkdir /mnt/vendor/persist 0700 root root
     mount ext4 /dev/block/platform/bootdevice/by-name/persist /mnt/vendor/persist
     # symlink /dev/block/platform/bootdevice to /dev/block/bootdevice for compatibility
