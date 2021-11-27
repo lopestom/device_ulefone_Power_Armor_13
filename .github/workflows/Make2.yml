@@ -18,7 +18,7 @@ on:
       DEVICE_URL:
         description: 'DEVICE_URL'
         required: true
-        default: 'https://github.com/lopestom/device_Armor_8_Pro.git'
+        default: 'https://github.com/lopestom/lopestom-device_Power_Armor_13.git'
       DEVICE_BRANCH:
         description: 'DEVICE_BRANCH'
         required: true
