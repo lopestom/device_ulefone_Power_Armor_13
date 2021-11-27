@@ -1,0 +1,30 @@
+#from device
+ro.product.board=Gotron-GQ3096TF2
+ro.board.platform=mt6785
+ro.odm.tee=2
+ro.hardware.egl=meow
+ro.vendor.mediatek.platform=MT6785
+ro.boot.hardware=mt6785
+ro.hardware=mt6785
+ro.vendor.mtk_f2fs_enable=0
+ro.vendor.mtk_emmc_support=1
+ro.vendor.mtk_ufs_support=1
+ro.hardware.kmsetkey=beanpod
+ro.hardware.gatekeeper=beanpod
+ro.vendor.mtk_microtrust_tee_support=1
+ro.crypto.volume.filenames_mode=aes-256-cts
+ro.sf.lcd_density=480
+#
+#others functions
+ro.secure=0
+ro.adb.secure=0
+ro.debuggable=1
+persist.sys.usb.config=mtp,adb
+persist.service.adb.enable=1
+persist.service.debuggable=1
+persist.sys.isUsbOtgEnabled=true
+ro.sys.usb.mtp.whql.enable=0
+ro.sys.usb.storage.type=mtp
+ro.treble.enabled=true
+ro.boot.dynamic_partitions=true
+sys.usb.ffs.aio_compat=true
