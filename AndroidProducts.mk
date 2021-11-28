@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_Power_Armor_13.mk
+    $(LOCAL_DIR)/omni_Power_Armor_13.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_Power_Armor_13-user \
-    twrp_Power_Armor_13-userdebug \
-    twrp_Power_Armor_13-eng
+    omni_Power_Armor_13-user \
+    omni_Power_Armor_13-userdebug \
+    omni_Power_Armor_13-eng
