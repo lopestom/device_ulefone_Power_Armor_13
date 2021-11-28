@@ -30,8 +30,8 @@ AB_OTA_PARTITIONS += \
     vbmeta \
     vbmeta_system \
     vbmeta_vendor \
-    vendor \
-    vendor_boot
+    vendor
+#    vendor_boot
     
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -50,9 +50,9 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-service \
     bootctrl.$(PRODUCT_PLATFORM).recovery
 
-PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.3-impl \
-    android.hardware.vibrator@1.3-service
+#PRODUCT_PACKAGES += \
+#    android.hardware.vibrator@1.3-impl \
+#    android.hardware.vibrator@1.3-service
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
