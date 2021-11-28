@@ -28,15 +28,15 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 # Inherit from rosemary device
 $(call inherit-product, device/ulefone/Power_Armor_13/device.mk)
 
-# Inherit from our custom product configuration
-$(call inherit-product, vendor/twrp/config/common.mk)
+# Inherit from PBRP custom product configuration
+$(call inherit-product, vendor/pb/config/common.mk)
 
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,recovery/root) \
 	$(LOCAL_PATH)/prebuilt/dtb:dtb.img
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := Power_Armor_13
-PRODUCT_NAME := twrp_Power_Armor_13
+PRODUCT_NAME := omni_Power_Armor_13
 PRODUCT_BRAND := Ulefone
 PRODUCT_MODEL := Power Armor 13
 PRODUCT_MANUFACTURER := Ulefone
