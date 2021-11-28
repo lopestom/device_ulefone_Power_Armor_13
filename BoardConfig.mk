@@ -50,8 +50,8 @@ MTK_HARDWARE := true
 TARGET_OTA_ASSERT_DEVICE := Power_Armor_13,Power Armor 13
 
 # Kernel
-BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.force_normal_boot=1
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
+#BOARD_KERNEL_CMDLINE += androidboot.force_normal_boot=1 androidboot.selinux=permissive
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 #BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb
@@ -137,9 +137,9 @@ BOARD_MAIN_PARTITION_LIST := system system_ext vendor product
 AB_OTA_UPDATER := true
 
 # Workaround for copying error vendor files to recovery ramdisk
-TARGET_COPY_OUT_PRODUCT := product
-TARGET_COPY_OUT_VENDOR := vendor
-TARGET_COPY_OUT_SYSTEM_EXT = system_ext
+#TARGET_COPY_OUT_PRODUCT := product
+#TARGET_COPY_OUT_VENDOR := vendor
+#TARGET_COPY_OUT_SYSTEM_EXT = system_ext
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
@@ -179,7 +179,7 @@ TW_DEVICE_VERSION := Ulefone Power Armor 13-20210720.V3.02 -by lopestom
 TW_DEFAULT_DEVICE_NAME := Power_Armor_13
 TW_DEFAULT_LANGUAGE := ru
 TW_INPUT_BLACKLIST := "hbtp_vm"
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
+#TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
 TW_HAS_MTP := true
 
 # Display
@@ -193,12 +193,12 @@ TW_Y_OFFSET := 86
 TW_H_OFFSET := -86
 TARGET_USES_MKE2FS := true
 TW_EXCLUDE_TWRPAPP := true
-TW_EXCLUDE_APEX := true
+#TW_EXCLUDE_APEX := true
 
 # resetprop and magiskboot
 #TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
-TW_LOAD_VENDOR_MODULES := true
+#TW_LOAD_VENDOR_MODULES := true
 # Debug
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
