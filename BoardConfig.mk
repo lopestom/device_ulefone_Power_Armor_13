@@ -137,7 +137,7 @@ BOARD_MAIN_PARTITION_LIST := system system_ext vendor product
 AB_OTA_UPDATER := true
 
 # Workaround for copying error vendor files to recovery ramdisk
-#TARGET_COPY_OUT_PRODUCT := product
+TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_VENDOR := vendor
 #TARGET_COPY_OUT_SYSTEM_EXT = system_ext
 
@@ -193,12 +193,12 @@ TW_Y_OFFSET := 86
 TW_H_OFFSET := -86
 TARGET_USES_MKE2FS := true
 TW_EXCLUDE_TWRPAPP := true
-#TW_EXCLUDE_APEX := true
+TW_EXCLUDE_APEX := true
 
 # resetprop and magiskboot
 #TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
-#TW_LOAD_VENDOR_MODULES := true
+TW_LOAD_VENDOR_MODULES := true
 # Debug
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
