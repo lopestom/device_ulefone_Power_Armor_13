@@ -139,7 +139,7 @@ AB_OTA_UPDATER := true
 # Workaround for copying error vendor files to recovery ramdisk
 TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_VENDOR := vendor
-#TARGET_COPY_OUT_SYSTEM_EXT = system_ext
+TARGET_COPY_OUT_SYSTEM_EXT = system_ext
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
