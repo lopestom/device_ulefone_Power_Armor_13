@@ -1,4 +1,4 @@
-# PBRP device trees for Ulefone Power Armor 13 (UPA13)
+# TWRP3.6.0_11 device trees for Ulefone Power Armor 13 (UPA13)
 
 ## Status --> ALPHA
 
