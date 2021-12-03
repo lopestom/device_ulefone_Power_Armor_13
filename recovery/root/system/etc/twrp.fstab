@@ -2,13 +2,13 @@
 #
 # mount point    fstype  device                             device2                flags
 # Android 11 = /system and /vendor in "super" partition.
-/system		        ext4	/dev/block/mapper/system_a              flags=backup=1;wipeingui
-/vendor             ext4    /dev/block/mapper/vendor_a             flags=backup=1;wipeingui
-/product            ext4    /dev/block/mapper/product_a            flags=backup=1;wipeingui
+/system		        ext4	/dev/block/mapper/system_a              flags=backup=1;wipeingui;logical
+/vendor             ext4    /dev/block/mapper/vendor_a             flags=backup=1;wipeingui;logical
+/product            ext4    /dev/block/mapper/product_a            flags=backup=1;wipeingui;logical
 
 # Images
-/system_image	    emmc  	/dev/block/mapper/system_a            flags=backup=1;flashimg=1
-/vendor_image	    emmc  	/dev/block/mapper/vendor_a             flags=backup=1;flashimg=1
+/system_image	    emmc  	/dev/block/mapper/system_a            flags=backup=1;flashimg=1;display="System Image"
+/vendor_image	    emmc  	/dev/block/mapper/vendor_a             flags=backup=1;flashimg=1;display="Vendor Image"
 /product_image	    emmc	   /dev/block/mapper/product_a             flags=backup=1;flashimg=1;display="Product Image"
 
 #
@@ -18,9 +18,9 @@
 
 # Common partition
 /data            ext4    dev/block/platform/bootdevice/by-name/userdata            flags=backup=1;fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption
-/boot_a            emmc    /dev/block/platform/bootdevice/by-name/boot_a               flags=backup=1;display="Boot";flashimg=1
+/boot_a            emmc    /dev/block/platform/bootdevice/by-name/boot_a               flags=backup=1;display="Boot_a";flashimg=1
 /dtbo            emmc    /dev/block/platform/bootdevice/by-name/dtbo               flags=backup=1;display="Dtbo";flashimg=1
-/persist         ext4    /dev/block/platform/bootdevice/by-name/persist            flags=backup=1;display="Persist"
+/persist         ext4    /dev/block/platform/bootdevice/by-name/persist            flags=backup=1;display="Persist";fsflags=ro;mounttodecrypt
 /persist_image   emmc    /dev/block/platform/bootdevice/by-name/persist            flags=backup=1;display="Persist Image";flashimg=1
 /vbmeta		    emmc	/dev/block/platform/bootdevice/by-name/vbmeta           flags=display="vbmeta";backup=1;flashimg=1
 /vbmeta_system   emmc    /dev/block/platform/bootdevice/by-name/vbmeta_system      flags=backup=1;display="vbmeta_system";flashimg=1
