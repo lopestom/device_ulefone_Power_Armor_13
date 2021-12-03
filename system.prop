@@ -1,6 +1,4 @@
 #from device
-ro.product.board=Gotron-GQ3096TF2
-ro.board.platform=mt6785
 ro.odm.tee=2
 ro.hardware.egl=meow
 ro.vendor.mediatek.platform=MT6785
