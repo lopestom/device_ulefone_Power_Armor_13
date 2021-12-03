@@ -46,8 +46,8 @@ PRODUCT_MANUFACTURER := Ulefone
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Extra required packages
-#PRODUCT_PACKAGES += \
-#    libion
+PRODUCT_PACKAGES += \
+    libion
     
 # fastbootd
 PRODUCT_PACKAGES += \
