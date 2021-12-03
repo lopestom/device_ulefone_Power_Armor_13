@@ -47,8 +47,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-impl-recovery \
     android.hardware.boot@1.1-impl \
-    android.hardware.boot@1.1-service \
-    bootctrl.$(PRODUCT_PLATFORM).recovery
+    android.hardware.boot@1.1-service
+#    bootctrl.$(PRODUCT_PLATFORM).recovery
 
 #PRODUCT_PACKAGES += \
 #    android.hardware.vibrator@1.3-impl \
@@ -76,6 +76,6 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 # Health Hal
 PRODUCT_PACKAGES += \
      android.hardware.health@2.1-impl \
-     android.hardware.health@2.1-service \
-     libhealthd.$(PRODUCT_PLATFORM)
+     android.hardware.health@2.1-service
+#     libhealthd.$(PRODUCT_PLATFORM)
 
