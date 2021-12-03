@@ -29,15 +29,15 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 # Inherit from rosemary device
 $(call inherit-product, device/ulefone/Power_Armor_13/device.mk)
 
-# Inherit from PBRP custom product configuration
-$(call inherit-product, vendor/pb/config/common.mk)
+# Inherit from minimal manifest aosp custom product configuration
+$(call inherit-product, vendor/twrp/config/common.mk)
 
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,recovery/root) \
 	$(LOCAL_PATH)/prebuilt/dtb:dtb.img
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := Power_Armor_13
-PRODUCT_NAME := omni_Power_Armor_13
+PRODUCT_NAME := twrp_Power_Armor_13
 PRODUCT_BRAND := Ulefone
 PRODUCT_MODEL := Power Armor 13
 PRODUCT_MANUFACTURER := Ulefone
@@ -62,5 +62,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 BUILD_FINGERPRINT := Ulefone/Power_Armor_13/Power_Armor_13:11/RP1A.200720.011/1626784999:user/release-keys
 
 # HACK: Set vendor patch level
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.security_patch=2099-12-31
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    ro.vendor.build.security_patch=2099-12-31
