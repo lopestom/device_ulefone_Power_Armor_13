@@ -1,0 +1,96 @@
+import /init.recovery.microtrust.rc
+
+on init
+    export ANDROID_ROOT /system_root
+    export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/vendor/lib64/hw
+    mkdir /mnt/vendor/persist 0700 root root
+    mount ext4 /dev/block/platform/bootdevice/by-name/persist /mnt/vendor/persist
+    # symlink /dev/block/platform/bootdevice to /dev/block/bootdevice for compatibility
+    symlink /dev/block/platform/bootdevice /dev/block/bootdevice
+
+on fs
+    install_keyring
+    setprop crypto.ready 1
+
+on fs
+    start hwservicemanager
+    start servicemanager
+
+service hwservicemanager /system/bin/hwservicemanager
+    user root
+    group root readproc
+    disabled
+    onrestart setprop hwservicemanager.ready false
+    seclabel u:r:recovery:s0
+
+service servicemanager /system/bin/servicemanager
+    user root
+    group root readproc
+    disabled
+    seclabel u:r:recovery:s0
+
+on post-fs
+
+service keystore_auth /system/bin/keystore_auth
+    oneshot
+    user system
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service keystore /system/bin/keystore /tmp/misc/keystore
+    user root
+    group root drmrpc readproc
+    disabled
+    seclabel u:r:recovery:s0
+
+service gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service
+#    interface android.hardware.gatekeeper@1.0::IGatekeeper default
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service keymaster-4-0 /vendor/bin/hw/android.hardware.keymaster@4.0-service.beanpod
+    user root
+    group root drmrpc
+    disabled
+    seclabel u:r:recovery:s0
+
+
+on property:hwservicemanager.ready=true
+    start keymaster-4-0
+    start gatekeeper-1-0
+
+on property:ro.crypto.state=unsupported
+    stop teei_daemon
+    stop keymaster-4-0
+    stop gatekeeper-1-0
+    stop servicemanager
+    stop hwservicemanager
+
+on property:ro.crypto.state=unencrypted
+    stop teei_daemon
+    stop keymaster-4-0
+    stop gatekeeper-1-0
+    stop servicemanager
+    stop hwservicemanager
+
+on property:twrp.decrypt.done=true
+    stop teei_daemon
+    stop keymaster-4-0
+    stop gatekeeper-1-0
+    stop servicemanager
+    stop hwservicemanager
+    rm /sdcard/TWRP/magisk
+    mkdir /sdcard/TWRP/magisk
+    symlink /system/magisk/NoReplaceTWRP.zip /sdcard/TWRP/magisk/NoReplaceTWRP.zip
+
+on property:sys.usb.config=fastboot
+    start servicemanager
+    start hwservicemanager
+    restart fastbootd
+
+on post-fs-data
+    mkdir /data/vendor_de 0770 system system
+    mkdir /data/vendor_de/0 0770 system system
