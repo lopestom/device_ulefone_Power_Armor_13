@@ -1,0 +1,53 @@
+name: Building TWRP
+
+on:
+  workflow_dispatch:
+    inputs:
+        tagName:
+            description: 'tagName'     
+            required: true
+            default: 'Version or info'
+        tagBody:
+            description: 'tagBody'     
+            required: true
+            default: 'some info'
+
+env:
+  TARGET: twrp
+  MANIFEST: git://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+       - name: Cleaning Up Runner
+         uses: rokibhasansagar/slimhub_actions@main
+
+       - name: Recovery Compilation
+         uses: lopestom/Recovery-Compiler@production
+
+       - name: Create Release
+         id: create_release
+         uses: actions/create-release@v1
+         env:
+           GITHUB_TOKEN: ${{ secrets.ARMOR }}
+         with:
+           tag_name: ${{ github.event.inputs.tagName }}
+           release_name: Release ${{ github.event.inputs.tagName }}
+           body: ${{ github.event.inputs.tagBody }}
+           draft: false
+           prerelease: false
+           
+       - name: Upload Release Asset
+         id: upload-release-asset 
+         uses: xresloader/upload-to-github-release@master
+         env:
+           GITHUB_TOKEN: ${{ secrets.POWER }}
+         with:
+           file: "${BuildPath}/out/target/product/${CODENAME}/{recovery.img,*.zip}"
+           release_id: ${{ steps.create_release.outputs.id }}
+           tag_name: ${{ github.event.inputs.tagName }}
+           overwrite: true
+           verbose: false
+           draft: false
