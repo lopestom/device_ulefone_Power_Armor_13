@@ -14,9 +14,9 @@ on:
 
 env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp -b twrp-11
-  DEVICE: T1023
-  DT_LINK: https://github.com/lopestom/twrp_device_alldocube_X_Game
-  DT_PATH: device/alldocube/T1023
+  DEVICE: Power_Armor_13
+  DT_LINK: https://github.com/lopestom/device_ulefone_Power_Armor_13
+  DT_PATH: device/ulefone/Power_Armor_13
   TARGET: bootimage
   TZ: Asia/manila
 
@@ -60,22 +60,22 @@ jobs:
        - name: Checkout device tree
          uses: actions/checkout@v2
          with:
-          path: twrp/device/alldocube/T1023
+          path: twrp/device/ulefone/Power_Armor_13
              
        - name: Build
          run: |
               PATH=~/bin:$PATH
               cd twrp
-              export ALLOW_MISSING_DEPENDENCIES=true && source build/envsetup.sh &&lunch twrp_X_Game-eng && mka $TARGET -j$(nproc --all)
-              cp  out/target/product/T1023/boot.img    out/target/product/T1023/boot-X_Game-A11-$(date +"%Y%m%d-%H%M").img  
+              export ALLOW_MISSING_DEPENDENCIES=true && source build/envsetup.sh &&lunch twrp_Power_Armor_13-eng && mka $TARGET -j$(nproc --all)
+              cp  out/target/product/Power_Armor_13/boot.img    out/target/product/Power_Armor_13/boot-UPA13-A11-$(date +"%Y%m%d-%H%M").img  
              
        - name: Release recovery image
          uses: softprops/action-gh-release@v1
          env:
           GITHUB_TOKEN: ${{ secrets.TEST }}
          with:
-          tag_name: Alldocube_X_Game
+          tag_name: Ulefone_Power_Armor_13
           name: TWRP36x_11
           files: | 
-            twrp/out/target/product/T1023/boot*.img
-            twrp/out/target/product/T1023/ramdisk*.img
+            twrp/out/target/product/Power_Armor_13/boot*.img
+            twrp/out/target/product/Power_Armor_13/ramdisk*.img
