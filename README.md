@@ -1,13 +1,14 @@
 # PBRP device trees for Ulefone Power Armor 13 (UPA13)
 
 ## Status --> ALPHA
+- [X] booting/start
 
 Current state of features (from [here](https://twrp.me/faq/OfficialMaintainer.html)):
 
 ### Blocking checks
 
 - [ ] Correct screen/recovery size
-- [ ] Working Touch, screen
+- [X] Working Touch, screen
 - [ ] Backup to internal/microSD
 - [ ] Restore from internal/microSD
 - [ ] reboot to system
