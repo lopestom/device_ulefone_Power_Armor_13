@@ -111,7 +111,8 @@ on load_persist_props_action
     chown system system /data/vendor/key_provisioning
     write /proc/bootprof "start teei cfg end (on load_persist_props_action)"
 
-on property:vold.decrypt=trigger_restart_framework
+on property:crypto.ready=1
+#on property:vold.decrypt=trigger_restart_framework
     write /proc/bootprof "start teei cfg (on trigger_restart_framework)"
     mkdir /data/vendor/thh
     mkdir /data/vendor/thh/system

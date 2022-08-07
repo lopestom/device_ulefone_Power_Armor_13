@@ -1,0 +1,10 @@
+# All the partitions to be wiped (in order) under recovery.
+/dev/block/mapper/system_a
+/dev/block/mapper/system_b
+/dev/block/mapper/vendor_a
+/dev/block/mapper/vendor_b
+/dev/block/platform/bootdevice/by-name/userdata
+# Wipe the boot partitions last so that all partitions will be wiped
+# correctly even if the wiping process gets interrupted by a force boot.
+/dev/block/platform/bootdevice/by-name/boot_a
+/dev/block/platform/bootdevice/by-name/boot_b

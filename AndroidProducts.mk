@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2021 TeamWin Recovery Project
+# Copyright (C) 2022 The TWRP Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_Power_Armor_13.mk
+     $(LOCAL_DIR)/twrp_Power_Armor_13.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_Power_Armor_13-user \
     twrp_Power_Armor_13-userdebug \
+    twrp_Power_Armor_13-user \
     twrp_Power_Armor_13-eng
