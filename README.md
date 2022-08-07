@@ -1,7 +1,7 @@
-# TWRP device tree for Ulefone Power Armor 13 (UPA13)
+# TWRP device tree for Ulefone Power Armor 13_TF2_V03 (UPA13)
 ## MT6785 - A11
 ---------------
-- Firmware version: OUKITEL_WP5_Pro_EEA_A11_V05_20210915
+- Firmware version: S7S68B7.GQU.Ulefone.HB.HJ.VKPMXY8AE.20220413.V3.03 - GQ3096TF2_KSS7_Ulefone_20220519_V03
 Status: testing
 
 recovery-UPA13-A11-nnnnnnn.img => Working?? Not Working???
@@ -10,7 +10,8 @@ recovery-UPA13-A11-nnnnnnn.img => Working?? Not Working???
 
 
 
-Specs: https://www.devicespecifications.com/en/model/ed6356a0
+Specs: https://www.devicespecifications.com/en/model/0a6056be
+
 Component Type | Details
 -------:|:-------------------------
 Shipped PLATFORM OS	 |  Android 11
