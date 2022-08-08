@@ -1,7 +1,7 @@
 # TWRP device tree for Ulefone Power Armor 13_TF2_V03 (UPA13)
-## MT6785 - A11
+## Firmware version: S7S68B7.GQU.Ulefone.HB.HJ.VKPMXY8AE.20220413.V3.03 - GQ3096TF2_KSS7_Ulefone_20220519_V03
 ---------------
-- Firmware version: S7S68B7.GQU.Ulefone.HB.HJ.VKPMXY8AE.20220413.V3.03 - GQ3096TF2_KSS7_Ulefone_20220519_V03
+- MT6785 - A11
 Status: testing
 
 recovery-UPA13-A11-nnnnnnn.img => Working
@@ -16,7 +16,6 @@ Chipset	     |  Mediatek MT6785 Helio G95 (12nm)
 CPU	         |  Octa-core (Cortex-A76 2x2.05 GHz + Cortex-A55 6x2.0 GHz)
 GPU	         |  ARM Mali-G76 MC4
 RAM / ROM	         |  8GB / 256GB
-
 
 ![Ulefone Power Armor 13](https://cdn-files.kimovil.com/default/0006/28/thumb_527428_default_big.jpeg)
 
