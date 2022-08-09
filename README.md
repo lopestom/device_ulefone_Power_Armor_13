@@ -18,6 +18,8 @@ GPU	         |  ARM Mali-G76 MC4
 RAM / ROM	         |  8GB / 256GB
 
 ![Ulefone Power Armor 13](https://cdn-files.kimovil.com/default/0006/28/thumb_527428_default_big.jpeg)
+===================================================================== 
+![Ulefone Power Armor 13](https://github.com/lopestom/device_ulefone_Power_Armor_13/blob/A11/pic/IMG_20220808_190539.jpg)
 
 ## Big thanks to:
 - [Котфуций 🐾](https://4pda.to/forum/index.php?showuser=2166242) for tests.
