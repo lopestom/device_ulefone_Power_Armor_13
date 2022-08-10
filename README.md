@@ -2,9 +2,9 @@
 ## Firmware version: S7S68B7.GQU.Ulefone.HB.HJ.VKPMXY8AE.20220413.V3.03 - GQ3096TF2_KSS7_Ulefone_20220519_V03
 ---------------
 - MT6785 - A11
-Status: testing
+Status: booted
 
-recovery-UPA13-A11-nnnnnnn.img => Working
+boot-UPA13-A11-20220808-0130.img => Working
 ------------------------------------
 
 Specs: https://www.devicespecifications.com/en/model/0a6056be
