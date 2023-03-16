@@ -1,4 +1,4 @@
-#fstab file by lopestom for Ulefone Power Armor 13_TF2_V03 - S7S68B7.GQU.Ulefone.HB.HJ.VKPMXY8AE.20220413.V3.03 - GQ3096TF2_KSS7_Ulefone_20220519_V03
+#fstab file by lopestom for Ulefone Power Armor 13_TF3_V10 - S7TS68B7.GQU.Ulefone.HB.HJ.AZVKPVFPEYDYTY8PTAE.20230223.V3.01 - GQ3096TF3_KSS7T_Ulefone_20230307_V01
 /system		        ext4	/dev/block/mapper/system              flags=backup=1;wipeingui;slotselect;logical;display="System_root"
 /vendor             ext4    /dev/block/mapper/vendor             flags=backup=1;wipeingui;logical;display="Vendor_a";slotselect
 /product            ext4    /dev/block/mapper/product             flags=backup=1;wipeingui;logical;display="Product_a";slotselect
@@ -12,7 +12,7 @@
 /metadata             ext4    /dev/block/platform/bootdevice/by-name/md_udc         flags=backup=1;display="metadata";mounttodecrypt
 
 # Common partition
-/data            ext4    /dev/block/by-name/userdata            flags=encryptable=/dev/block/platform/bootdevice/by-name/md_udc
+/data            ext4    /dev/block/platform/bootdevice/by-name/userdata            flags=encryptable=/dev/block/platform/bootdevice/by-name/md_udc
 /vendor_boot	emmc	/dev/block/platform/bootdevice/by-name/vendor_boot		 flags=display="Vendor Boot";backup=1;flashimg=1;slotselect
 /boot            emmc    /dev/block/platform/bootdevice/by-name/boot               flags=backup=1;display="Boot";flashimg=1;slotselect
 /dtbo            emmc    /dev/block/platform/bootdevice/by-name/dtbo               flags=backup=1;display="Dtbo";flashimg=1;slotselect
@@ -72,7 +72,7 @@
 /otp            emmc    /dev/block/platform/bootdevice/by-name/otp               flags=display="otp";backup=1
 /spmfw		    emmc	/dev/block/platform/bootdevice/by-name/spmfw            flags=display="Spm";backup=1;slotselect
 /sspm		    emmc	/dev/block/platform/bootdevice/by-name/sspm           flags=display="sspm";backup=1;slotselect
-#/odmdtbo emmc /dev/block/platform/bootdevice/by-name/odmdtbo
+#/odmdtbo   emmc  /dev/block/platform/bootdevice/by-name/odmdtbo
 
 # External-Devices (SDCARD | OTG)
 /external_sd    auto     /dev/block/mmcblk0p1  /dev/block/mmcblk0    flags=display="External_SDcard";storage;wipeingui;removable;fsflags="utf8"
