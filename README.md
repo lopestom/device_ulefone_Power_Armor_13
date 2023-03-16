@@ -1,10 +1,13 @@
 # TWRP device tree for Ulefone Power Armor 13_TF3_V10 (UPA13)
 ## Firmware version: GQ3096TF3_KSS7T_Ulefone_20230307_V01 (Non-EU)
+
+This device tree not have encrypt/decrypt mode because boot.img has only 32MB. Otherwise it would need more than 38MB on the partition.
+
 ---------------
 - MT6785 - A11 update to A12
-Status: booted
+  - Status: booted??
 
-boot-UPA13-A11-2023MMDD-hhhh.img => Working?? Not working?
+   - boot-UPA13-A11-2023MMDD-hhhh.img => Working?? Not working?
 ------------------------------------
 
 Specs: https://www.devicespecifications.com/en/model/0a6056be
