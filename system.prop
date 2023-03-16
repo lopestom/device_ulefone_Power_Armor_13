@@ -2,6 +2,9 @@
 ro.apex.updatable=true
 init.userspace_reboot.is_supported=true
 persist.adb.nonblocking_ffs=0
+external_storage.projid.enabled=1
+external_storage.casefold.enabled=1
+external_storage.sdcardfs.enabled=0
 #ro.tee_support=1
 ro.hardware.egl=meow
 ro.vendor.mtk_f2fs_enable=0
