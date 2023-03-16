@@ -1,6 +1,6 @@
 #
 # Copyright (C) 2022 The Android Open Source Project
-# Copyright (C) 2022 The TWRP Open Source Project
+# Copyright (C) 2023 The TWRP Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -34,14 +34,13 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
-
 TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
 TARGET_SUPPORTS_64_BIT_APPS := true
 TARGET_IS_64_BIT := true
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := Gotron-GQ3096TF2
+TARGET_BOOTLOADER_BOARD_NAME := Gotron-GQ3096TF3
 TARGET_NO_BOOTLOADER := true
 TARGET_USES_UEFI := true
 
@@ -96,7 +95,6 @@ BOARD_SUPER_PARTITION_GROUPS := main
 BOARD_MAIN_SIZE := 6438256640 # (BOARD_SUPER_PARTITION_SIZE - 4MB)
 BOARD_MAIN_PARTITION_LIST := product vendor system odm
 
-
 # System as root
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
 BOARD_SUPPRESS_SECURE_ERASE := true
@@ -104,8 +102,6 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 # Kernel
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
 BOARD_KERNEL_CMDLINE += androidboot.force_normal_boot=1
-#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
-#BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive androidboot.boot_devices=bootdevice
 BOARD_KERNEL_BASE := 0x40078000
 BOARD_DTB_OFFSET := 0x0bc08000
 BOARD_HASH_TYPE := sha1
@@ -148,9 +144,11 @@ BOARD_AVB_RECOVERY_ADD_HASH_FOOTER_ARGS += \
     --prop com.android.build.boot.security_patch:$(PLATFORM_SECURITY_PATCH)
 
 # Hack to get keymaster to recognize the key files
-PLATFORM_SECURITY_PATCH := 2021-06-05
-VENDOR_SECURITY_PATCH := 2021-06-05
-PLATFORM_VERSION := 11
+PLATFORM_SECURITY_PATCH := 2022-12-05
+VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
+BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
+PLATFORM_VERSION := 12.0.0
+PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
 
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
@@ -166,24 +164,27 @@ TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
 TW_INCLUDE_FBE := true
 TW_INCLUDE_FBE_METADATA_DECRYPT := true
-#TW_USE_FSCRYPT_POLICY := 1
-#TW_CRYPTO_USE_SYSTEM_VOLD := true
+# fscrypt policy FBEv2
+TW_USE_FSCRYPT_POLICY := 2
+
 TW_CRYPTO_FS_TYPE := "ext4"
 TW_CRYPTO_REAL_BLKDEV := "/dev/block/platform/bootdevice/by-name/userdata"
 TW_CRYPTO_MNT_POINT := "/data"
 #TW_CRYPTO_FS_OPTIONS := "nosuid,nodev,noatime,discard,noauto_da_alloc,data=ordered"
 TW_CRYPTO_FS_OPTIONS := "rw,seclabel,nosuid,nodev,noatime,noauto_da_alloc,inlinecrypt,resgid=1065,errors=panic,data=ordered"
-TW_CRYPTO_KEY_LOC := "key"
-#TW_CRYPTO_KEY_LOC := /metadata/vold/metadata_encryption/key
+#TW_CRYPTO_KEY_LOC := "key"
+TW_CRYPTO_KEY_LOC := /metadata/vold/metadata_encryption/key
 #TW_CRYPTO_KEY_LOC := "footer"
 
 # Additional binaries & libraries needed for recovery
 TARGET_RECOVERY_DEVICE_MODULES += \
     libkeymaster4 \
+    libkeymaster41 \
     libpuresoftkeymasterdevice
 
 TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster41.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
 
 # Properties
@@ -194,7 +195,7 @@ TARGET_RECOVERY_INITRC := $(DEVICE_PATH)/recovery/root/init.recovery.mt6785.rc
 TARGET_RECOVERY_WIPE := $(DEVICE_PATH)/recovery.wipe
 
 # Recovery
-#TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
+TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 #TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/twrp.fstab
 RECOVERY_SDCARD_ON_DATA := true
 BOARD_USES_RECOVERY_AS_BOOT := true
@@ -209,7 +210,6 @@ TW_INCLUDE_NTFS_3G := true
 TW_USE_TOOLBOX := true
 TARGET_USES_MKE2FS := true
 TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
-#TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_NO_BATT_PERCENT := false
 
@@ -231,7 +231,7 @@ TW_DEFAULT_BRIGHTNESS := 150
 #TW_H_OFFSET := -50
 
 #TW_DEFAULT_DEVICE_NAME := Power Armor 13
-TW_DEVICE_VERSION := UPA 13_20220413.V3.03 by lopestom
+TW_DEVICE_VERSION := UPA 13_TF3_KSS7T_20230223.V3.01 by lopestom
 
 # Resolution
 TW_THEME := portrait_hdpi
