@@ -1,6 +1,7 @@
 # Default properties
 ro.apex.updatable=true
 init.userspace_reboot.is_supported=true
+persist.adb.nonblocking_ffs=0
 #ro.tee_support=1
 ro.hardware.egl=meow
 ro.vendor.mtk_f2fs_enable=0
@@ -9,7 +10,7 @@ ro.frp.pst=/dev/block/platform/bootdevice/by-name/frp
 ro.vendor.mtk_emmc_support=1
 ro.vendor.mtk_ufs_support=1
 ro.odm.tee=2
-ro.odm.fingerprint=fortsense_tee_none_android11
+ro.odm.fingerprint=fortsense_tee_none_android12
 ro.vendor.mtk_uicc_clf=1
 ro.hardware.kmsetkey=beanpod
 ro.hardware.gatekeeper=beanpod
@@ -19,9 +20,9 @@ ro.hardware=mt6785
 ro.boot.hardware=mt6785
 ro.sf.lcd_density=480
 ro.vendor.mediatek.platform=MT6785
-ro.odm.build_number=Power Armor 13_TF2_V03
-ro.odm.custom_build_version=GQ3096TF2_KSS7_Ulefone_20220519_V03
-ro.odm.lock_baseband_version=MOLY.LR13.R1.MP.V110.P3,MOLY.LR13.R1.MP.V110.P3
+ro.odm.build_number=Power Armor 13_TF3_V10
+ro.odm.custom_build_version=GQ3096TF3_KSS7T_Ulefone_20230307_V01
+ro.odm.lock_baseband_version=MOLY.LR13.R1.MP.V164.P2,MOLY.LR13.R1.MP.V164.P2
 #
 ro.boot.avb_version=1.1
 ro.boot.vbmeta.avb_version=1.1
