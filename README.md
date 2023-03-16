@@ -1,5 +1,5 @@
 # TWRP device tree for Ulefone Power Armor 13_TF3_V10 (UPA13)
-## Firmware version: GQ3096TF3_KSS7T_Ulefone_20230307_V01（Non-EU)
+## Firmware version: GQ3096TF3_KSS7T_Ulefone_20230307_V01 (Non-EU)
 ---------------
 - MT6785 - A11 update to A12
 Status: booted
