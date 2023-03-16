@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2022 The Android Open Source Project
+# Copyright (C) 2023 The TWRP Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -46,7 +47,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE=Power_Armor_13 \
     BUILD_PRODUCT=Power_Armor_13 \
     PRODUCT_NAME=Power_Armor_13 \
-    PRIVATE_BUILD_DESC="full_k85v1_64-user 11 RP1A.200720.011 1649218647 release-keys"
+    PRIVATE_BUILD_DESC="Power_Armor_13-user 12 SP1A.210812.016 1675935266 release-keys"
 
-BUILD_FINGERPRINT := Ulefone/Power_Armor_13/Power_Armor_13:11/RP1A.200720.011/1649218647:user/release-keys
+BUILD_FINGERPRINT := Ulefone/Power_Armor_13/Power_Armor_13:12/SP1A.210812.016/1675935266:user/release-keys
 
