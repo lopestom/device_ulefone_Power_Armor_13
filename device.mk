@@ -17,6 +17,9 @@
 
 LOCAL_PATH := device/ulefone/Power_Armor_13
 
+# Enable project quotas and casefolding for emulated storage without sdcardfs
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
 # Dynamic Partitions stuff
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
