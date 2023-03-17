@@ -25,6 +25,7 @@ RAM / ROM	         |  8GB / 256GB
 ![Ulefone Power Armor 13](https://github.com/lopestom/device_ulefone_Power_Armor_13/)
 
 ![Ulefone Power Armor 13](https://fdn2.gsmarena.com/vv/pics/ulefone/ulefone-power-armor-13-1.jpg)
+![Ulefone Power Armor 13](https://cdn-files.kimovil.com/default/0006/28/thumb_527428_default_big.jpeg)
 
 ## Big thanks to:
 - [Котфуций 🐾](https://4pda.to/forum/index.php?showuser=2166242) for tests.
