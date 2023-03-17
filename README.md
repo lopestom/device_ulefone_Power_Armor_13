@@ -6,8 +6,10 @@ This device tree not have encrypt/decrypt mode because boot.img has only 32MB. O
 ---------------
 - MT6785 - A11 update to A12
   - Status: booted??
+  - [X] booted
 
    - boot-UPA13-A11-2023MMDD-hhhh.img => Working?? Not working?
+  - [X] Working
 ------------------------------------
 
 Specs: https://www.devicespecifications.com/en/model/0a6056be
