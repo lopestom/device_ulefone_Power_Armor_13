@@ -32,7 +32,7 @@ RAM / ROM	         |  8GB / 256GB
 </details>
 
 ## Big thanks to:
-- [Котфуций 🐾](https://4pda.to/forum/index.php?showuser=2166242) for tests.
+- [Котфуций 🐾](https://4pda.to/forum/index.php?showuser=2166242) ![Kot](https://4pda.to/s/wZD6OQRn7DV2Hw0RhDB87Ehv5B40ANqkb9z1TB2918gTy4P4.gif) for tests.
 - [TeamWin](https://github.com/TeamWin) for TWRP SC.
 * TWRP version 3.7.0_12 *
 
