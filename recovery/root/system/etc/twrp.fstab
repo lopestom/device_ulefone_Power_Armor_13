@@ -1,12 +1,12 @@
 #fstab file by lopestom for Ulefone Power Armor 13_TF3_V10 - S7TS68B7.GQU.Ulefone.HB.HJ.AZVKPVFPEYDYTY8PTAE.20230223.V3.01 - GQ3096TF3_KSS7T_Ulefone_20230307_V01
-#/system		        ext4	/dev/block/mapper/system              flags=backup=1;wipeingui;slotselect;logical;display="System_root"
-#/vendor             ext4    /dev/block/mapper/vendor             flags=backup=1;wipeingui;logical;display="Vendor_a";slotselect
-#/product            ext4    /dev/block/mapper/product             flags=backup=1;wipeingui;logical;display="Product_a";slotselect
+/system		        ext4	/dev/block/mapper/system              flags=backup=1;wipeingui;slotselect;logical;display="System_root"
+/vendor             ext4    /dev/block/mapper/vendor             flags=backup=1;wipeingui;logical;display="Vendor_a";slotselect
+/product            ext4    /dev/block/mapper/product             flags=backup=1;wipeingui;logical;display="Product_a";slotselect
 
 # Images
-#/system_image	    emmc  	/dev/block/mapper/system_a            flags=backup=1;flashimg=1;slotselect;logical;display="System Image_a"
-#/vendor_image	    emmc  	/dev/block/mapper/vendor_a             flags=backup=1;flashimg=1;slotselect;logical;display="Vendor Image_a"
-#/product_image	    emmc	/dev/block/mapper/product_a             flags=backup=1;flashimg=1;slotselect;logical;display="Product Image_a"
+/system_image	    emmc  	/dev/block/mapper/system_a            flags=backup=1;flashimg=1;slotselect;logical;display="System Image_a"
+/vendor_image	    emmc  	/dev/block/mapper/vendor_a             flags=backup=1;flashimg=1;slotselect;logical;display="Vendor Image_a"
+/product_image	    emmc	/dev/block/mapper/product_a             flags=backup=1;flashimg=1;slotselect;logical;display="Product Image_a"
 
 # Core Partitions
 /metadata             ext4    /dev/block/platform/bootdevice/by-name/md_udc         flags=backup=1;display="metadata";mounttodecrypt
